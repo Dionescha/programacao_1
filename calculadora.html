@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="./codigo.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css" />
     
     
     
@@ -13,17 +14,33 @@
 </head>
 <body>
     <h1>Calculadora</h1>
-    <form>
-        <label> Valor 1</label><br>
-        <input type="number" id="valor1"><br>
+    <form name="calcform" method="post" action="">
+        <fieldset>
+            
+       
+        <label for="valor1">Digite o valor </label>
+               <input type="text" name="valor1" id="valor1" />
          
-        <label > Valor 2 </label><br>
-        <input type="number" id="valor2"><br>
+               <label for="valor2">Digite o valor </label>
+               <input type="text" name="valor2" id="valor2" />
 
-        <button type="button" onclick="soma()">Calcular</button><br>
+        <label for="oper">Selecione a operação:</label>
+               <select name="oper" id="oper">
+                  <option value="+">+</option>
+                  <option value="-">-</option>
+                  <option value="*">*</option>
+                  <option value="/">/</option>
+               </select>
 
-        <label> Resultado</label><br>
-        <input type="number" id="resultado"><br>
+         
+       
+        <label for="res">Resultado:</label>
+               <input type="text" name="res" id="res" />
+        
+    
+
+        <input type="button" value="Calcular" class="botao" onClick="calcular(document.calcform.oper.value)"/>
+        </fieldset>
     </form>
 </body>
 </html>
